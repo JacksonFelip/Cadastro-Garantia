@@ -1,0 +1,110 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="MontarDadosQuiver" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Apolice" Type="InArgument(njl:JObject)" />
+    <x:Property Name="out_LinhaQuiver" Type="OutArgument(x:String)" />
+    <x:Property Name="in_DadosKit" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>MontarDadosQuiver_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="MontarDadosQuiver" sap:VirtualizedContainerService.HintSize="1236,571.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim F As New System.Globalization.CultureInfo(&quot;pt-BR&quot;)&#xA;Dim inv As System.Globalization.CultureInfo = System.Globalization.CultureInfo.InvariantCulture&#xA;&#xA;' ---- objetos do JSON ----&#xA;Dim tom  = TryCast(apolice(&quot;policyholder&quot;), Newtonsoft.Json.Linq.JObject)&#xA;Dim seg  = TryCast(apolice(&quot;insuredOrTribunal&quot;), Newtonsoft.Json.Linq.JObject)&#xA;Dim moda = TryCast(apolice(&quot;modality&quot;), Newtonsoft.Json.Linq.JObject)&#xA;Dim inst = TryCast(apolice(&quot;installments&quot;), Newtonsoft.Json.Linq.JArray)&#xA;Dim brk  = TryCast(apolice(&quot;insuranceBrokersPartner&quot;), Newtonsoft.Json.Linq.JArray)&#xA;&#xA;' ---- Sub-tipo: Licitante -&gt; Avulsa | demais -&gt; Renovavel ----&#xA;Dim modal = If(moda Is Nothing, &quot;&quot;, moda(&quot;description&quot;).ToString)&#xA;Dim subTipo = If(modal.ToUpper().Contains(&quot;LICITANTE&quot;), &quot;Avulsa&quot;, &quot;Renovavel&quot;)&#xA;&#xA;' ---- datas (ISO -&gt; dd/MM/yyyy) ----&#xA;Dim ini = &quot;&quot;, fim = &quot;&quot;, emi = &quot;&quot;, ven = &quot;&quot;&#xA;If apolice(&quot;durationStart&quot;) IsNot Nothing Then ini = DateTime.Parse(apolice(&quot;durationStart&quot;).ToString, inv).ToString(&quot;dd/MM/yyyy&quot;)&#xA;If apolice(&quot;durationEnd&quot;)   IsNot Nothing Then fim = DateTime.Parse(apolice(&quot;durationEnd&quot;).ToString, inv).ToString(&quot;dd/MM/yyyy&quot;)&#xA;If apolice(&quot;issueAt&quot;)       IsNot Nothing Then emi = DateTime.Parse(apolice(&quot;issueAt&quot;).ToString, inv).ToString(&quot;dd/MM/yyyy&quot;)&#xA;&#xA;Dim qtd As String = &quot;1&quot;&#xA;If inst IsNot Nothing AndAlso inst.Count &gt; 0 Then&#xA;    qtd = inst.Count.ToString&#xA;    If inst(0)(&quot;dueDate&quot;) IsNot Nothing Then ven = DateTime.Parse(inst(0)(&quot;dueDate&quot;).ToString, inv).ToString(&quot;dd/MM/yyyy&quot;)&#xA;End If&#xA;&#xA;' ---- valores ----&#xA;Dim isv = CDbl(apolice(&quot;insuredAmount&quot;)).ToString(&quot;N2&quot;, F)&#xA;Dim pl  = CDbl(apolice(&quot;netPremiumValue&quot;)).ToString(&quot;N2&quot;, F)&#xA;Dim pt  = CDbl(apolice(&quot;totalPremiumValue&quot;)).ToString(&quot;N2&quot;, F)&#xA;Dim iof = (CDbl(apolice(&quot;totalPremiumValue&quot;)) - CDbl(apolice(&quot;netPremiumValue&quot;))).ToString(&quot;N2&quot;, F)&#xA;&#xA;' ---- comissao da API (com fallback) ----&#xA;Dim com As String = &quot;32,0000&quot;&#xA;If brk IsNot Nothing AndAlso brk.Count &gt; 0 Then&#xA;    com = CDbl(brk(0)(&quot;commissionPercentage&quot;)).ToString(&quot;N4&quot;, F)&#xA;End If&#xA;&#xA;' ---- do PDF ----&#xA;Dim objeto  = If(dados.ContainsKey(&quot;ObjetoGarantia&quot;), dados(&quot;ObjetoGarantia&quot;).ToString, &quot;&quot;)&#xA;Dim produto = If(dados.ContainsKey(&quot;RamoDescricao&quot;),  dados(&quot;RamoDescricao&quot;).ToString,  &quot;&quot;)&#xA;&#xA;' ---- monta a linha (21 colunas) ----&#xA;linha = String.Join(&quot;;&quot;, New String() {&#xA;    If(tom Is Nothing, &quot;&quot;, tom(&quot;name&quot;).ToString),                    ' 1  Cliente/Tomador (API)&#xA;&#x9;If(dados.ContainsKey(&quot;CnpjTomador&quot;), dados(&quot;CnpjTomador&quot;).ToString, &quot;&quot;),&#xA;    apolice(&quot;policyNumber&quot;).ToString.Replace(&quot;-&quot;,&quot;&quot;),                 ' 2  Nº apolice&#xA;    subTipo,                                                          ' 3  Sub-tipo&#xA;    &quot;JUNTO SEGUROS&quot;,                                                  ' 4  Seguradora&#xA;    produto,                                                          ' 5  Produto (PDF)&#xA;    &quot;JGS GARANTIA&quot;,                                                   ' 6  Grupo producao&#xA;    If(apolice(&quot;documentNumber&quot;) Is Nothing, &quot;&quot;, apolice(&quot;documentNumber&quot;).ToString), ' 7&#xA;    ini,                                                              ' 8  Inicio vigencia (API)&#xA;    fim,                                                              ' 9  Termino vigencia (API)&#xA;    emi,                                                              ' 10 Data emissao (API)&#xA;    &quot;Seguro Novo&quot;,                                                    ' 11 Tipo negocio&#xA;    If(seg Is Nothing, &quot;&quot;, seg(&quot;name&quot;).ToString),                     ' 12 Segurado (API!)&#xA;    &quot;&quot;,                                                               ' 13 Endereco local risco (nao obrigatorio)&#xA;    &quot;&quot;,                                                               ' 14 Edital (nao obrigatorio)&#xA;    objeto,                                                           ' 15 Objeto do seguro (PDF)&#xA;    isv,                                                              ' 16 IS (API)&#xA;    com,                                                              ' 17 Comissao (API)&#xA;    pl,                                                               ' 18 Premio liq (API)&#xA;    iof,                                                              ' 19 IOF (API)&#xA;    qtd,                                                              ' 20 Qtd parcelas (API)&#xA;    ven                                                               ' 21 Venc 1a parcela (API)&#xA;})" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="450,394" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="apolice">[in_Apolice]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="dados">[in_DadosKit]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="linha">[out_LinhaQuiver]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+  </Sequence>
+</Activity>

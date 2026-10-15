@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Incluir Segurado também…",
+  "Type": "Element",
+  "Id": "oyPQcAJoFEiTCiTfCHEBGw",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/oyPQcAJoFEiTCiTfCHEBGw",
+  "ParentRef": "t-2VCXfgGUWTPpvWKjOBMg/JA11VpWbnkWroAD2EXQC2Q",
+  "Created": "2026-10-14T17:51:27.3944607Z",
+  "Updated": "2026-10-14T17:51:27.3944607Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

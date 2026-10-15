@@ -1,0 +1,6 @@
+{
+  "Name": "Junto_Garantia_Cadastro",
+  "ProjectType": "Process",
+  "Description": "Automação de cadastro de Apólices e Endossos de Seguro Garantia - Junto Seguros",
+  "MainFile": "Main.xaml"
+}

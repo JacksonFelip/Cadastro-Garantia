@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="imXsW0GQYUyjcyynmW0ptQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CvType="Icon" DesignTimeRectangle="56, 154, 25, 25" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" Guid="88f3b03b-76cc-461d-9f18-105372d6283a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB4SURBVEhLY/hPBzBqCUkAasnP/+9fv/v/nKr48//vEMNhlhz5H63n/p+Jqrjj/zaI4TBLTv0v8Yj4L0VVPOX/Pojhwy/iaQvoaQldUhddLKFLZqQtGHaW0KVYoUvqevf/3M59/9dRFV/7/xxi+PCLeNqC4WLJ//8A6QRsqpma93gAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="cc7db9e4e9ba2aceda551ff7e71d83b6.jpg" xmlns="">0as-eXMxyIEi9lDg6pIR7yQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

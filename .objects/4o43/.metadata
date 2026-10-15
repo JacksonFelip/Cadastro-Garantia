@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome Quiver - Sistema para Corretora de Seguros  Software corretora de seguros  Sis",
+  "Type": "App",
+  "Id": "4o43xF2kfU6IkpYWKlGVnw",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/4o43xF2kfU6IkpYWKlGVnw",
+  "Created": "2026-10-07T13:48:00.1217176Z",
+  "Updated": "2026-10-07T13:48:00.1217176Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

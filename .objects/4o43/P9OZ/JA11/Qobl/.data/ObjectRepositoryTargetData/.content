@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="JsUo0iXEzkyIWRZQhVzWbw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="48, 416, 1314, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' type='' class='select2-results__option' aaname='R SOUSA COMERCIO DE MATERIAIS DE LIMPEZA LTDA - 054.103.839/0001-84' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='R SOUSA COMERCIO DE MATERIAIS DE LIMPEZA LTDA - 054.103.839/0001-84' /&gt;" Guid="4a69f11c-7849-4f0c-8a28-15162b821aed" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="b18031404a7ad93964778a516625b6ae.jpg" xmlns="">0vL7GiRmZfE2lMO1Tc3B95w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

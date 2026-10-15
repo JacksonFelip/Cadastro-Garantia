@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Quiver - Sistema para Corretora de Seg",
+  "Type": "Screen",
+  "Id": "bkvVbQYxpEyiNWLnh1SxxA",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/bkvVbQYxpEyiNWLnh1SxxA",
+  "ParentRef": "t-2VCXfgGUWTPpvWKjOBMg/P9OZE4mIGEOX8AzBTTZNsg",
+  "Created": "2026-10-07T13:48:00.2480185Z",
+  "Updated": "2026-10-07T13:48:00.2480185Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

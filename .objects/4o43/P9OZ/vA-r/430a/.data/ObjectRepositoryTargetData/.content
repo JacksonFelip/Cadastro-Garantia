@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="u9z4p7ZTS0inLTgNqCTaBg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1623, 270, 16, 16" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span' isleaf='1' tag='SPAN' /&gt;" Guid="7d95b1ff-298d-4ea3-a52b-2d7ffd311b8c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVDhPzZOxDUAhCEQd2wlsdSdGcBdbfiguQcAYtfnFxQh3D2M0ERGPMa4k2RQ1TvRDQO+dc87cWpvqspe69HXdAcQEAYIwpP0OYM3RXvvDO7ChVVi0vMTdZCgE1FqnMFRKcV4HsGF7EgtxgMgsq65rvwPgHdhJgGzfwaneAW/fmfgDRmGH+opzn14AAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, Image" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="ba8f8cbc1d5ed47f912c1334981e3a54.jpg" xmlns="">0oJszn9GO7EWnAKm6VWAsrw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

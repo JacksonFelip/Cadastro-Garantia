@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Corretor On Line",
+  "Type": "Screen",
+  "Id": "vA-rNSrcmE6O7VjaJAZfUw",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/vA-rNSrcmE6O7VjaJAZfUw",
+  "ParentRef": "t-2VCXfgGUWTPpvWKjOBMg/P9OZE4mIGEOX8AzBTTZNsg",
+  "Created": "2026-10-07T14:18:12.9612027Z",
+  "Updated": "2026-10-07T14:18:12.9612027Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,24 @@
+# Credenciais e configs sensíveis
+Config.xlsx
+**/Config.xlsx
+*.local
+.env
+secrets.json
+
+# Pastas de dados gerados
+Data/Temp/
+Data/Apolices/
+*.json
+!project.json
+!entry-points.json
+
+# Arquivos de teste com dados reais (opcional)
+**/_Tests/
+################################################################################
+# Added by UiPath Studio
+# Prevent caching and local artifacts from being committed
+################################################################################
+.local
+################################################################################
+# End of UiPath Studio common ignores
+################################################################################

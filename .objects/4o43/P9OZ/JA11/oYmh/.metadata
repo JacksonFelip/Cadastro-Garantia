@@ -1,0 +1,13 @@
+﻿{
+  "Name": "!i Alerta×",
+  "Type": "Element",
+  "Id": "oYmhOJ4wGUiZ-3LYxGPpmw",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/oYmhOJ4wGUiZ-3LYxGPpmw",
+  "ParentRef": "t-2VCXfgGUWTPpvWKjOBMg/JA11VpWbnkWroAD2EXQC2Q",
+  "Created": "2026-10-13T13:42:36.3343969Z",
+  "Updated": "2026-10-13T13:42:36.3343969Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

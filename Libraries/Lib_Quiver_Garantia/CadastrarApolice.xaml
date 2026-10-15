@@ -1,0 +1,1182 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CadastrarApolice" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_CnpjTomador" Type="InArgument(x:String)" />
+    <x:Property Name="out_ErrorMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Success" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="in_VencPrimeiraParcela" Type="InArgument(x:String)" />
+    <x:Property Name="in_QtdParcelas" Type="InArgument(x:String)" />
+    <x:Property Name="in_IOF" Type="InArgument(x:String)" />
+    <x:Property Name="in_PremioLiquido" Type="InArgument(x:String)" />
+    <x:Property Name="in_Comissao" Type="InArgument(x:String)" />
+    <x:Property Name="in_IS" Type="InArgument(x:String)" />
+    <x:Property Name="in_ObjetoSeguro" Type="InArgument(x:String)" />
+    <x:Property Name="in_Segurado" Type="InArgument(x:String)" />
+    <x:Property Name="in_TipoNegocio" Type="InArgument(x:String)" />
+    <x:Property Name="in_DataEmissao" Type="InArgument(x:String)" />
+    <x:Property Name="in_TerminoVigencia" Type="InArgument(x:String)" />
+    <x:Property Name="in_InicioVigencia" Type="InArgument(x:String)" />
+    <x:Property Name="in_NumeroControle" Type="InArgument(x:String)" />
+    <x:Property Name="in_GrupoProducao" Type="InArgument(x:String)" />
+    <x:Property Name="in_Produto" Type="InArgument(x:String)" />
+    <x:Property Name="in_Seguradora" Type="InArgument(x:String)" />
+    <x:Property Name="in_SubTipo" Type="InArgument(x:String)" />
+    <x:Property Name="in_NumeroApolice" Type="InArgument(x:String)" />
+    <x:Property Name="in_ClienteTomador" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>CadastrarApolice_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.AsyncEnumerable</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CadastrarApolice" sap:VirtualizedContainerService.HintSize="1159,14446" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="nomePdf" />
+      <Variable x:TypeArguments="x:String" Name="pastaPdfs" />
+      <Variable x:TypeArguments="x:String" Name="caminhoPdf" />
+      <Variable x:TypeArguments="x:String" Name="textoAnexo" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="724,14423" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Tentar" sap:VirtualizedContainerService.HintSize="722,14107" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome Corretor On Line(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,13999" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="686,13795" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NSelectItem DisplayName="Select Item 'SPAN'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,195" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Digite algo para iniciar a busca" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="1">
+                        <x:String>Digite algo para iniciar a busca</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="48, 209, 1316, 32" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='combobox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='combobox' tag='SPAN' type='' class='select2-selection select2-selection--single' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ec79aa6a-0b78-4012-b776-41893102be55" InformativeScreenshot="0b3ba8de602ddff98382d9067002ee80.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT CLIENTE'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,318" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[&quot;0&quot; + in_CnpjTomador.ToString.Trim]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="12, 245, 1306, 34" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl tag='INPUT' type='search' class='select2-search__field' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="6f84fe1e-4574-42f1-b6da-aa13abf338aa" InformativeScreenshot="b259d505fdb368c23d7a3eebe0b82e53.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" ContentHash="JsUo0iXEzkyIWRZQhVzWbw" DesignTimeRectangle="48, 416, 1314, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' type='' class='select2-results__option' aaname='R SOUSA COMERCIO DE MATERIAIS DE LIMPEZA LTDA - 054.103.839/0001-84' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='R SOUSA COMERCIO DE MATERIAIS DE LIMPEZA LTDA - 054.103.839/0001-84' /&gt;" Guid="4a69f11c-7849-4f0c-8a28-15162b821aed" InformativeScreenshot="b18031404a7ad93964778a516625b6ae.jpg" Reference="t-2VCXfgGUWTPpvWKjOBMg/QoblNdenlUu7_Qqgev7QuQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                            <uix:TargetAnchorable.PointOffset>
+                              <uix:PointOffset />
+                            </uix:TargetAnchorable.PointOffset>
+                          </uix:TargetAnchorable>
+                        </uix:VerifyExecutionTypeIntoOptions.Target>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'CLIENTE'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" ContentHash="JsUo0iXEzkyIWRZQhVzWbw" DesignTimeRectangle="48, 416, 1314, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' type='' class='select2-results__option' aaname='R SOUSA COMERCIO DE MATERIAIS DE LIMPEZA LTDA - 054.103.839/0001-84' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='R SOUSA COMERCIO DE MATERIAIS DE LIMPEZA LTDA - 054.103.839/0001-84' /&gt;" Guid="4a69f11c-7849-4f0c-8a28-15162b821aed" InformativeScreenshot="b18031404a7ad93964778a516625b6ae.jpg" Reference="t-2VCXfgGUWTPpvWKjOBMg/QoblNdenlUu7_Qqgev7QuQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Nº apólice'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_NumeroApolice]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1353, 209, 419, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_Apolice' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_Apolice' tag='INPUT' type='text' class='form-control  ' aaname='Nº apólice' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="30e4a79e-6457-4eba-95dd-c041a7758d7b" InformativeScreenshot="f9b0cfcebe44bb592ee499ca01d86401.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1353, 193, 55, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumento_Apolice' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumento_Apolice' tag='LABEL' type='' class='bmd-label-floating' aaname='Nº apólice' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Nº apólice' /&gt;" Guid="9a76b008-573a-4428-867b-efd91b0e2d80" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sub-tipo'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="651, 201, 706, 30" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='textbox' parentid='DIVDocumento_SubTipo' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='textbox' parentid='DIVDocumento_SubTipo' tag='SPAN' type='' class='select2-selection__rendered' aaname='Renovável' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='×&amp;#xA;Renovável' /&gt;" Guid="41f8d6ee-d621-4825-9bc8-c926320e340c" InformativeScreenshot="c78c265e20076963bc5b37b5aae7e92d.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'SubTipo'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_SubTipo]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="650, 236, 708, 34" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl tag='INPUT' type='search' class='select2-search__field' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b7654643-6a50-4dbd-83ab-32f810b18ad6" InformativeScreenshot="cc577d1ccbc390e53a6bd7e10fcba07e.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Escolhe_SubTipo'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_20" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="646, 474, 716, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' type='' class='select2-results__option' aaname='Avulsa' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Avulsa' /&gt;" Guid="3faddf4a-253f-4ee5-bf97-63f5f123ce7d" InformativeScreenshot="8d5b9b2810eb3ed0c32e9fe7c43e6c24.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '×'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="53, 257, 407, 30" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='textbox' parentid='DIVDocumento_Seguradora' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='textbox' parentid='DIVDocumento_Seguradora' tag='SPAN' type='' class='select2-selection__rendered' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='×' /&gt;" Guid="c2ef4a7a-7cf2-4b34-a9b8-e9751daae148" InformativeScreenshot="9ff11f9e40b6d5fca752589b4cd3473b.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Seguradora'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_Seguradora]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="52, 292, 409, 34" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl tag='INPUT' type='search' class='select2-search__field' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="927f727c-336f-4744-9fde-4dd38359d90f" InformativeScreenshot="3c8438c44db9f56c4b654e5bd62c2fa6.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Escolhe_Seguradora'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_21" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="48, 586, 417, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' type='' class='select2-results__option' aaname='JUNTO SEGUROS' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='JUNTO SEGUROS' /&gt;" Guid="2ae4953a-bb2b-427d-905d-544760f0d2e3" InformativeScreenshot="72bc906620796aafdcb1d87542f10fd5.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Produto'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="951, 257, 556, 30" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='textbox' parentid='DIVDocumento_Produto' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='textbox' parentid='DIVDocumento_Produto' tag='SPAN' type='' class='select2-selection__rendered' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='×' /&gt;" Guid="58acc1cb-c68a-4ac2-8019-28dba015c908" InformativeScreenshot="8ddc452249700bbed66646a733e61283.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Produto'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_Produto]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="950, 292, 558, 34" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl tag='INPUT' type='search' class='select2-search__field' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="5c238658-c57b-4cc8-8a1c-fb7d11cdbfd6" InformativeScreenshot="40ebdc009e1ffbc941e6e0b28420bcd3.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Escolhe_Produto'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_22" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="946, 586, 566, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' type='' class='select2-results__option' aaname='GARANTIA SETOR PUBLICO' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='GARANTIA SETOR PUBLICO' /&gt;" Guid="308aaff8-35d8-42e3-806d-c1ea38ee6e23" InformativeScreenshot="53736c258df5bb1b1377ffb387389773.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NSelectItem DisplayName="Select Item 'GrupoProducao'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,195" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="Digite algo para iniciar a busca" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="1">
+                        <x:String>Digite algo para iniciar a busca</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="48, 312, 568, 32" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='combobox' parentid='DIVDocumento_GrupoHierarquico' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='combobox' parentid='DIVDocumento_GrupoHierarquico' tag='SPAN' type='' class='select2-selection select2-selection--single' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3c2f9483-19b9-4c05-b4b3-6c808a42bc17" InformativeScreenshot="886e2ed6e3591f13e61ef6a990a08a1a.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'GrupoProducao'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_GrupoProducao]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="12, 348, 558, 34" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl tag='INPUT' type='search' class='select2-search__field' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="f9d1dca0-7af8-4eca-95f9-3ef28c9c8b50" InformativeScreenshot="876e065c42a50f3fb83c5ea2885e66b2.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Escolhe_GrupoProduao'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_23" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="48, 642, 566, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='treeitem' tag='LI' type='' class='select2-results__option' aaname='JGS GARANTIA' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='JGS GARANTIA' /&gt;" Guid="2a767038-1570-4cd5-b5a6-8994f0d949f8" InformativeScreenshot="6585c5040a9551b830e296129a1a3037.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Nº proposta da cia'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_NumeroControle]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1204, 379, 269, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_PropostaCia' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_PropostaCia' tag='INPUT' type='text' class='form-control  ' aaname='Nº proposta da cia' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="eb962d22-1c60-439b-aeef-7f0c509179fc" InformativeScreenshot="b1bfca5499b1014060eb05a526721826.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1204, 363, 98, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumento_PropostaCia' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumento_PropostaCia' tag='LABEL' type='' class='bmd-label-floating' aaname='Nº proposta da cia' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Nº proposta da cia' /&gt;" Guid="60c0c8a4-0883-43ad-a11c-4708f00a2ade" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Início de vigência'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_InicioVigencia]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="47, 504, 419, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_InicioVigencia' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_InicioVigencia' tag='INPUT' type='text' class='form-control datePic  ' aaname='Início de vigência' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="57bad8de-a78e-4ece-9dc3-d4171f575390" InformativeScreenshot="3c55e12bf2008a85a306c56b95b3ac12.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="47, 488, 93, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumento_InicioVigencia' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumento_InicioVigencia' tag='LABEL' type='' class='bmd-label-floating' aaname='Início de vigência' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Início de vigência' /&gt;" Guid="1edf7bf0-0378-4458-a61a-f3174d90d02f" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Término vigência'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_TerminoVigencia]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="496, 504, 269, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_TerminoVigencia' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_TerminoVigencia' tag='INPUT' type='text' class='form-control datePic  ' aaname='Término vigência' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ce51bd3e-e47b-46ca-8462-740900449d26" InformativeScreenshot="ecc71e5d8b98d5f5b233d572cbe470f0.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="496, 488, 91, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumento_TerminoVigencia' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumento_TerminoVigencia' tag='LABEL' type='' class='bmd-label-floating' aaname='Término vigência' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Término vigência' /&gt;" Guid="12b1358c-8f77-4dd2-8e70-5a5f98519903" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Data de emissão'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_10" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_DataEmissao]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="795, 504, 269, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_DataEmissao' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_DataEmissao' tag='INPUT' type='text' class='form-control datePic  ' aaname='Data de emissão' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3ac9d03b-e290-4227-b271-34931f27186c" InformativeScreenshot="041055d5315475639d4703f52f745a49.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="795, 488, 90, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumento_DataEmissao' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumento_DataEmissao' tag='LABEL' type='' class='bmd-label-floating' aaname='Data de emissão' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Data de emissão' /&gt;" Guid="3d60c05d-6959-4994-8fa1-d1c529e81eeb" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'unchecked'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,195" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="354, 664, 20, 20" DesignTimeScaleFactor="1" ElementType="RadioButton" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_TipoNegocio1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_TipoNegocio1' tag='INPUT' type='radio' class='' aaname='Seguro novo' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="c01b2a47-03b4-44fe-90b4-571ae4371fbd" InformativeScreenshot="d826bc9cfd66c461ad88b897b383c4e1.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="379, 668, 74, 14" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aaname='Seguro novo' parentid='DIVDocumento_TipoNegocio' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Seguro novo' parentid='DIVDocumento_TipoNegocio' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Seguro novo' /&gt;" Guid="7844926f-3f7e-4e97-a354-0bd5e8d2314e" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gravar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="956, 1008, 111, 38" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtGravar' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='BtGravar' tag='BUTTON' type='button' class='btn' aaname='Gravar' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='GRAVAR' /&gt;" Guid="5d2b6438-c2eb-41e6-b1d1-526c09f9176c" InformativeScreenshot="2a28c73383671d2230e7295bb7b83ed0.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'O cliente já tem uma ap…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,680" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Destino aparece" sap:VirtualizedContainerService.HintSize="650,245" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Não'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,185" sap2010:WorkflowViewState.IdRef="NClick_25" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CVScreenId="575aa5af-0861-4966-8de2-672aa71edbe8" CvTextArea="923, 693, 28, 14" CvTextArgument="SIM" CvType="Text" DesignTimeRectangle="909, 683, 57, 36" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='swalbtn1' tag='BUTTON' /&gt;" Guid="1259d790-607c-439b-9e1a-33aa31fb8651" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAkCAYAAAAzUJLAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL0SURBVGhD7ZbZTxNRFIf9AyWCArKDbLIacIFoCAHKFozBHRDTAEZjooa1FdqyCy0QlrK0LFJLaQsKZSu0Qpef517qYwkBHybjfH1oO71zOt89y8wV/AdIkmJBkhQLkqRYkCTFgiQpFiTJ8+L2uKFe0+D1TD1qJ5/j5XQdOk0K7P3eg9fvhdGxiDp9A9pW2uFwO7BI3+XzTXg6+QJqcy/2j/cDkU4Zsg7j+dQrHqvfMhg4enEuLenyuNCy8B5pqgxEdEQjqTsVkZ0x9J7CxeyHG+izDCCqKxal2nJYDiwYWB9Cck86QlrDUDD0CMu7K4Fop/HKdVW41nYDV1tDUa9vDPxycS4tqf81i1QSjFEmUDZ7YXAYMWLTculbJNxjVgWVZBKxykSerWPfCY/HhG+rs/gGCEZSa9chTpmEGEU8DNtGfszj88K094Nf8MbhZlDJaEUcbnbF4O2cHDvuHX7u5+UviO6K4xXBRAUhueXaQiGVXGh7OGUgG3UzDSRogp9eDJahYJJ5/feQoc6hkn2IVTrHeeKETFuB5O40lNHakDaBSDKZ9QMrKnTVCCPR6x2RSKR+LBktw9LO0pmSZSQk01byzxoq9amf03yjSkdltFYmHEkGE2UT1uq0Qj7XTOWbiFAaHPcHC7G0uxxUsnikFE3zLZTNbD6R6/VvEP81CQqTkosKSvIvfr+f3zJsThsyNTnUpwn4RD0WTJKV+eD6MGS6Sr4+XZWJdHUmle4qn7CCkWyclSO8MwpFI8U48hzxobPtciC3L/9ckgvbBjQb3iGKhhCbpjUTT3BAvVk5Vi0cSQNdZG5fHvVjBE3KWOT3PzgtV+rPuwMFXOIsSaNjCeMbEzyTbLNUZjWOvcfCkmRsHm3yp50szR1+8RmabFSPP4Z5fw0nNHjYbYZtBHvCsTnt0NnH+EStGqvB991VPqFrJ5+h6FsJ1mgTfH4f79EUivXB+DHwLxfnn/akUJEkxYIkKRYkSbEgSYoFSVIsSJLiAPgD3ur6Yh2j7K4AAAAASUVORK5CYII=" InformativeScreenshot="e72aeea9e5582ea657be34188133da0a.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, Image, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Destino não aparece" sap:VirtualizedContainerService.HintSize="650,90" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CVScreenId="575aa5af-0861-4966-8de2-672aa71edbe8" ContentHash="pmM3YQ9adkquBiYh0xK2Mg" CvTextArea="923, 693, 28, 14" CvTextArgument="SIM" CvType="Text" DesignTimeRectangle="909, 683, 57, 36" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='swalbtn1' tag='BUTTON' /&gt;" Guid="4ef76d75-5844-4220-9764-76e0dcb211ee" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAkCAYAAAAzUJLAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL0SURBVGhD7ZbZTxNRFIf9AyWCArKDbLIacIFoCAHKFozBHRDTAEZjooa1FdqyCy0QlrK0LFJLaQsKZSu0Qpef517qYwkBHybjfH1oO71zOt89y8wV/AdIkmJBkhQLkqRYkCTFgiQpFiTJ8+L2uKFe0+D1TD1qJ5/j5XQdOk0K7P3eg9fvhdGxiDp9A9pW2uFwO7BI3+XzTXg6+QJqcy/2j/cDkU4Zsg7j+dQrHqvfMhg4enEuLenyuNCy8B5pqgxEdEQjqTsVkZ0x9J7CxeyHG+izDCCqKxal2nJYDiwYWB9Cck86QlrDUDD0CMu7K4Fop/HKdVW41nYDV1tDUa9vDPxycS4tqf81i1QSjFEmUDZ7YXAYMWLTculbJNxjVgWVZBKxykSerWPfCY/HhG+rs/gGCEZSa9chTpmEGEU8DNtGfszj88K094Nf8MbhZlDJaEUcbnbF4O2cHDvuHX7u5+UviO6K4xXBRAUhueXaQiGVXGh7OGUgG3UzDSRogp9eDJahYJJ5/feQoc6hkn2IVTrHeeKETFuB5O40lNHakDaBSDKZ9QMrKnTVCCPR6x2RSKR+LBktw9LO0pmSZSQk01byzxoq9amf03yjSkdltFYmHEkGE2UT1uq0Qj7XTOWbiFAaHPcHC7G0uxxUsnikFE3zLZTNbD6R6/VvEP81CQqTkosKSvIvfr+f3zJsThsyNTnUpwn4RD0WTJKV+eD6MGS6Sr4+XZWJdHUmle4qn7CCkWyclSO8MwpFI8U48hzxobPtciC3L/9ckgvbBjQb3iGKhhCbpjUTT3BAvVk5Vi0cSQNdZG5fHvVjBE3KWOT3PzgtV+rPuwMFXOIsSaNjCeMbEzyTbLNUZjWOvcfCkmRsHm3yp50szR1+8RmabFSPP4Z5fw0nNHjYbYZtBHvCsTnt0NnH+EStGqvB991VPqFrJ5+h6FsJ1mgTfH4f79EUivXB+DHwLxfnn/akUJEkxYIkKRYkSbEgSYoFSVIsSJLiAPgD3ur6Yh2j7K4AAAAASUVORK5CYII=" InformativeScreenshot="a371cfb60a3cc3fcdd4a35250c7b5d39.jpg" Reference="t-2VCXfgGUWTPpvWKjOBMg/9ISWptkNVku_6wTSEexzTA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, Image, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Garantia (0) Incluir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="75, 803, 1839, 36" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl parentid='DocumentoItemGarantia_Box' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='DocumentoItemGarantia_Box' tag='H2' type='' class='' aaname=' ' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Garantia (0)&amp;#xA; INCLUIR' /&gt;" Guid="18ff4b67-fe38-41c0-9610-e5a63206f4cd" InformativeScreenshot="904f318fbec44fd9207064c19205d22b.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Incluir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1819, 806, 90, 32" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtIncluirDocumentoItemGarantia' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='BtIncluirDocumentoItemGarantia' tag='BUTTON' type='button' class='btn btn-sm float-right btn-success btn-raised' aaname=' Incluir' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='INCLUIR' /&gt;" Guid="09092bee-d645-4900-99b3-e46fada39673" InformativeScreenshot="947231500a8540fd6a5a0580bc49f904.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NSelectItem DisplayName="Select Item 'SPAN'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,195" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="Digite algo para iniciar a busca" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="1">
+                        <x:String>Digite algo para iniciar a busca</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="649, 380, 724, 32" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='combobox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='combobox' tag='SPAN' type='' class='select2-selection select2-selection--single' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="8c0c70ca-e469-49a5-987f-01d9e10d436a" InformativeScreenshot="a3de5bec2c473a19ce9bc7c2c23497db.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="True" DeselectAfter="True" DisplayName="Type Into 'Segurado'" EmptyFieldMode="[UiPath.UIAutomationNext.Enums.NEmptyFieldMode.None]" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,298" sap2010:WorkflowViewState.IdRef="NTypeInto_11" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_Segurado]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="649, 380, 724, 32" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='combobox' tag='SPAN' type='' class='select2-selection select2-selection--single' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a342f497-c47c-4580-b276-886c6d649936" InformativeScreenshot="e519bcd6d9c55e764c7ed9930b1762b5.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="13b4c926-504b-4735-937e-81ee7aaea468" CvTextArea="648, 362, 54, 15" CvTextArgument="Segurado" CvType="Text" DesignTimeRectangle="649, 364, 52, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumentoIte_Cliente' tag='LABEL' type='' class=' form_control_1 head_ctrl_label bmd-label-static ' aaname='Segurado' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Segurado' /&gt;" Guid="1856023b-de84-4b1b-ac69-e4109f45c1c2" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions ExpectedText="[in_Segurado]" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  DocumentoIte_Tip...'" sap:VirtualizedContainerService.HintSize="652,139" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="28f960c0-12d4-4b7a-84b2-6da2083fe812" InformativeScreenshot="46bb678fb0ff1a56d4f7f3d7e42b49d6" Selector="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='DocumentoIte_Tipo_Pessoa1' tag='INPUT' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.Double]" DisplayName="Type Into 'Endereço do local de ri…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_13" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_Segurado]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="349, 514, 724, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='DocumentoIte_Endereco' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='DocumentoIte_Endereco' tag='INPUT' type='text' class='form-control erro  ' aaname='Endereço do local de risco' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="21ab9565-00b3-41c0-bf52-8e7eb5c76da0" InformativeScreenshot="db3196275e43c498ea1518edee41df6f.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="349, 498, 141, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumentoIte_Endereco' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumentoIte_Endereco' tag='LABEL' type='' class='bmd-label-floating' aaname='Endereço do local de risco' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Endereço do local de risco' /&gt;" Guid="a906194b-38ef-40b3-ae38-c53bec61d77d" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears" Retry="True">
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Objeto do seguro'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_12" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_ObjetoSeguro]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="45, 739, 1197, 72" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='DocumentoIte_Observacoes' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='DocumentoIte_Observacoes' tag='TEXTAREA' type='' class='form-control' aaname='Objeto do seguro' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="141c421e-d843-4af3-bd3e-e595824d9177" InformativeScreenshot="36bebef28238583299f32452085a77a3.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="45, 723, 92, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumentoIte_Observacoes' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumentoIte_Observacoes' tag='LABEL' type='' class='bmd-label-floating' aaname='Objeto do seguro' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Objeto do seguro' /&gt;" Guid="5d7c4d81-468a-47d8-8f0d-9f40cf57c17a" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gravar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1020, 1008, 112, 38" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtGravar' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='BtGravar' tag='BUTTON' type='button' class='btn' aaname='Gravar' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='GRAVAR' /&gt;" Guid="4f77c23c-fd31-4454-a2e8-2281705fde39" InformativeScreenshot="bc642503ddad8201e236abbe74f43dd5.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'Incluir Segurado também…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,680" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Destino aparece" sap:VirtualizedContainerService.HintSize="650,245" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Não'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,185" sap2010:WorkflowViewState.IdRef="NClick_36" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="966, 672, 61, 36" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='swalbtn2' tag='BUTTON' /&gt;" Guid="9d831520-1191-4fe3-93b4-8ad14a28373c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD0AAAAkCAYAAAA6uzK6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPfSURBVGhD7Zb7bxZFFIb9q7wrtlwqtLRpBVuQQpEK1ioG0EC0UYgtWtJaFUoQiYTERkVKK1iiECQRKCAFqlQsgjHaK1Qq4s7s7O7svJ45+7WYoL+420az+yabTc7MN98+c855Z+5CCpVBp0UZdFqUQadFGfSUyxiY0RHo48egv++D+W0cuuc0wquXYXwvN2nqNa3QRkoEn3XCfaEWansL/APtcOvWIujqoDGRmzX1mlbo8PoovJ1bod7eguDTfXA3rofatAFh3zc0GOZmTb2mN9POH9AXexFe6Yf5dQy6+yvoCz2AmL4sW8WGtj3qvfsOvOYGhP3f5aIUFw68D/dAtb6J8NsLuShJawb1Wpvht+2GGRrIDdyWuTGG4JM2qKYGqC2vwdvVGq1NnpCEYkOHP/RDVpbCmX0vVP3L3LdW1qTkuhqI8kIEhw5wzMrcHIf33jY4hTMgFpdAHzsCBH5ulNYbHIBq3ASxcC5EcR6c4nx68tgH9KkTiYAnBz3rHvrIfARHv+D4P0Fryphav5o3yZn7IGfRzmURvLdrO0TJTDK4dezsXBW7d0DMz4N6aQ3MtZFobgwlCE0QBCKfW0GGde3voQkqOHIIculjkKuWQFTSe20Nr2FlBn6G++xygp6FoPv4ZFbNyBDcpyt5LX30c47FUWLQomwOXMqEoOz5e3bCjN+4A9qMXYfa2gSxqJgzrOrrICqKEBzuAjwFff4slXwxZNVChLbXJ6DpOFONG7nUvfd3cCyOkoOmHtSnT0QfvbSMSvPMHdD2aJKrqyGfqaK5J+Hv/QCSxr1tzZGbUzmLivmQ1Ytg6HiblHLhvdXIJW6PvLhKFNoM/gJ//8cQ8x6Gu+F5LvUJaOO6dDHpgFjwKBtVODIM3dsDWVsF+dRi6L5e6K+7I+gVFQj/2rsWumXzfxSaStLcusmwTsEDcOY9NAkdUl/a44cNjD7ewonHC3mDnKJHEBzcz2e4W10BWVbA19RJp771O9w1q6iFCuB37otiMZQ4tP1QfYYyVjQDzsy7Gdrv6qSsnuOMsuEV3B9tin3m3MfOr954lSvFpbd1ddXyOmCPP7qTB18e5vXs78Mfr+T++d8reWgrazybX+GsMnT7R/A79rIrq4Y6hMOD0TySPnsKcuUTtAb5AF1iwsuXIGuW8YaIknyI0tm8SaK8CP7B9tvZj6H40D9dpdJbCZd604wOc8zQPVpfusiGJWuXk2G1kVk1caaseRnq0QlZw/Ka6iGfLI9cnMbM0CA8e0FZtgBiSSncF+liQlfWJICtYkP/H5VBp0UZdFqUQadFGXRalEGnRRl0OgT8CWNkMHVn8JOSAAAAAElFTkSuQmCC" InformativeScreenshot="267fe516e070f6a76463bdac6d0d75de.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, Image" Version="V6" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Destino não aparece" sap:VirtualizedContainerService.HintSize="650,90" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" ContentHash="L6IsvNRss0uZaZRubCzr5Q" DesignTimeRectangle="732, 650, 472, 63" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='5' tag='DIV' /&gt;" Guid="ee3ee49d-904a-497a-ae1c-aa297e917f9e" ImageBase64="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" InformativeScreenshot="9a2a10f52baf9eeb84673d6725239053.jpg" Reference="t-2VCXfgGUWTPpvWKjOBMg/oyPQcAJoFEiTCiTfCHEBGw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, Image" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="966, 672, 61, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='swalbtn2' tag='BUTTON' type='' class='btn btn-danger' aaname='Não' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='NÃO' /&gt;" Guid="90422420-3af3-4900-8e3b-3b16ad681d25" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Coberturas (0) Incluir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="35, 834, 1834, 36" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl parentid='DocumentoItemLocalCob_Box' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='DocumentoItemLocalCob_Box' tag='H2' type='' class='' aaname=' ' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Coberturas (0)&amp;#xA; INCLUIR' /&gt;" Guid="7d4d3d58-a6e1-437f-b986-2a78829e8aec" InformativeScreenshot="352db19f6f17f77351208422b6702b8c.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Incluir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1759, 837, 90, 33" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtIncluirDocumentoItemLocalCob' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='BtIncluirDocumentoItemLocalCob' tag='BUTTON' type='button' class='btn btn-sm float-right btn-success btn-raised' aaname=' Incluir' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='INCLUIR' /&gt;" Guid="d6ae1a63-76b3-4c5f-8d52-a48632b0b00d" InformativeScreenshot="2b648c01409d3e098311bbd1fbc80c2f.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '×'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="355, 335, 561, 30" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='textbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='textbox' tag='SPAN' type='' class='select2-selection__rendered' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='×' /&gt;" Guid="07325158-0c2a-4eb8-ba11-4599cf465260" InformativeScreenshot="745d9233559a2c463e9e8e9ad611a24a.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_14" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="IMPORTÂNCIA SEGURADA" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="354, 370, 563, 34" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl tag='INPUT' type='search' class='select2-search__field' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b16fee31-9685-4ad8-9fb8-1290058ecf3a" InformativeScreenshot="c099013ef0bd144b9dd5ef393adbc330.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMPORTÂNCIA SEGURADA'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="350, 408, 571, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl tag='LI' type='' class='select2-results__option' aaname='IMPORTÂNCIA SEGURADA' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='IMPORTÂNCIA SEGURADA' /&gt;" Guid="48df8d8d-125a-4b7c-911d-1d7103bdd601" InformativeScreenshot="39baca3bfb8cc10d483030044de56a1e.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="True" DeselectAfter="True" DisplayName="Type Into 'Importância segurada'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_15" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_IS + &quot;[k(tab)]&quot;]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="47, 402, 423, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='DocumentoIteCob_ImpSegurada' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='DocumentoIteCob_ImpSegurada' tag='INPUT' type='text' class='form-control ' aaname='Importância segurada' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="f3e052e9-f45d-4e3c-abe7-61f18ebf0848" InformativeScreenshot="64a76f9d57fab83631be7db70192172d.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="47, 386, 116, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumentoIteCob_ImpSegurada' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumentoIteCob_ImpSegurada' tag='LABEL' type='' class='bmd-label-floating' aaname='Importância segurada' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Importância segurada' /&gt;" Guid="8acbba5a-9872-410b-a2b9-156d33cb2c48" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gravar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1020, 1008, 112, 38" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtGravar' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='BtGravar' tag='BUTTON' type='button' class='btn' aaname='Gravar' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='GRAVAR' /&gt;" Guid="f585d028-9eea-4aad-965b-c15e64a1f743" InformativeScreenshot="6a021dce093af75e109ac29f9bcac78f.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Voltar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="802, 1008, 109, 38" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Button1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Button1' tag='BUTTON' type='button' class='btn' aaname='Voltar' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='VOLTAR' /&gt;" Guid="5d6d3df6-499a-473d-9e3b-b32f0594991b" InformativeScreenshot="5f0d5ffed307a501658ebd6b298803c4.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Voltar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="802, 1008, 109, 38" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Button1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Button1' tag='BUTTON' type='button' class='btn' aaname='Voltar' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='VOLTAR' /&gt;" Guid="e3be2849-8594-4bcd-8b5c-557ef8705bdc" InformativeScreenshot="b7b61e3dd0b61acd149254cdde6cb042.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="652,123" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Prêmios'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="75, 836, 1854, 36" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl parentid='Premios_Box' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='Premios_Box' tag='H2' type='' class='' aaname=' ' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Prêmios' /&gt;" Guid="09bc81b2-02d1-4a71-9614-a1de9759a141" InformativeScreenshot="e4a9b9e0e7304d7b736b8f6839c08ea4.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '×'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="118, 906, 788, 30" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='textbox' parentid='DIVDocumento_MeioPagto' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='textbox' parentid='DIVDocumento_MeioPagto' tag='SPAN' type='' class='select2-selection__rendered' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='×' /&gt;" Guid="40694339-6c7d-4096-9e12-2983de5c1aa1" InformativeScreenshot="b1ae493529501bd14450eb893c111ef9.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BOLETO'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="113, 621, 798, 30" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aria-role='treeitem' idx='3' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='treeitem' type='' tag='LI' class='select2-results__option' aaname='BOLETO' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='BOLETO' /&gt;" Guid="af733e76-4af1-4863-8cc7-7abf16e8b529" InformativeScreenshot="b3c54084ebad3f4d3a23a211c407d81e.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Qtd. parcelas'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_17" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_QtdParcelas]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="112, 561, 247, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_QtdeParcPremio' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_QtdeParcPremio' tag='INPUT' type='text' class='form-control ' aaname='Qtd. parcelas' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="811d2352-7c43-413a-a2bb-27c214a661f1" InformativeScreenshot="4b6e125d2fe7680085f6cbcc6e6bfb6a.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="112, 545, 71, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumento_QtdeParcPremio' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumento_QtdeParcPremio' tag='LABEL' type='' class='bmd-label-floating' aaname='Qtd. parcelas' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Qtd. parcelas' /&gt;" Guid="58e3b54d-589d-4ab1-b0dc-0293c7a8f3e5" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Data venc. 1a. parcela'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_18" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_VencPrimeiraParcela]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="112, 639, 247, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_DataVencPrimeira' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_DataVencPrimeira' tag='INPUT' type='text' class='form-control datePic  ' aaname='Data venc. 1a. parcela' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="bc2c4bcd-d3bc-47ca-8b03-b205d0969564" InformativeScreenshot="125037b2acb850cd2b09264fe866c0eb.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="112, 623, 120, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='labelDocumento_DataVencPrimeira' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelDocumento_DataVencPrimeira' tag='LABEL' type='' class='bmd-label-floating' aaname='Data venc. 1a. parcela' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Data venc. 1a. parcela' /&gt;" Guid="96837960-5a94-4589-bbe5-68b86e5bef3a" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '% com. base'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_19" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_Comissao]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1002, 561, 178, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_PercComBase' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_PercComBase' tag='INPUT' type='text' class='form-control ' aaname='% com. base' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9b92dc24-01ac-432c-a3a2-e5b26169946d" InformativeScreenshot="36d703e3eff8cc3a838e76622daae461.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1002, 545, 69, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='TrComissaoLblBase' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='TrComissaoLblBase' tag='LABEL' type='' class='bmd-label-floating' aaname='% com. base' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='% com. base' /&gt;" Guid="87d10881-76fd-4209-9a55-a9d31ca6c037" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '% com. final'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_20" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_Comissao]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1417, 561, 178, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_PercComissao' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_PercComissao' tag='INPUT' type='text' class='form-control ' aaname='% com. final' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a551a65b-b1de-42be-af32-ab02fd825848" InformativeScreenshot="35dba042bc4b90c0f452f9919adb7f0a.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1417, 545, 65, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='TrComissaoLblFinal' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='TrComissaoLblFinal' tag='LABEL' type='' class='bmd-label-floating' aaname='% com. final' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='% com. final' /&gt;" Guid="d732c7b1-7e26-4c68-bc53-d945c2bc028a" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Prêmio líq do seguro'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_21" InteractionMode="SameAsCard" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[in_PremioLiquido]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1210, 617, 246, 32" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Documento_PremioLiqDesc' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='Documento_PremioLiqDesc' tag='INPUT' type='text' class='form-control ' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="67ad941d-a534-4270-8edb-ecdfc39707b4" InformativeScreenshot="61b192e972026255286e580bb128b2f5.jpg" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="987, 622, 208, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='lblPremLiqSeg' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='lblPremLiqSeg' tag='P' type='' class='mt-4 label' aaname='Prêmio líq do seguro' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Prêmio líq do seguro' /&gt;" Guid="8204a3e5-e075-4644-afee-129e36f41f92" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gravar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_18" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="956, 1008, 111, 38" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtGravar' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='BtGravar' tag='BUTTON' type='button' class='btn' aaname='Gravar' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='GRAVAR' /&gt;" Guid="5100e743-3df6-4b0d-8dc5-6dd4e42afd64" InformativeScreenshot="7a3c1c21b9a2913e5242c226d9c606db.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_28" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="12, 228, 55, 55" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl parentid='BtAnexar' tag='I' /&gt;" Guid="de9190de-63c9-4e04-9077-41648825efb7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVGhD7Zkxa9tAFMeLv4p3L/0IHTLYXyB48NKpZAwUTMhWYgj15C6B4M0QEAQaCFkiAgENHpztFhmDBqMh4INokAWGf87qWbblK4j0HfTgPfgNOr077qd3i959qjWOYIPPFz6CeYJ0hT+xyiDnAqOLb8Z8G1iQ6+D0aYFUOx1GhvjpCnXjXFrI5Zq30b7YMsEsjCGX+jmPDOL2zDifElq51m9MNscQCSY3vZ0KddC+mULqt1hN8au1M9cCtHJepHcOyPGVMed0nOgMQHiH7ykhldtuPIHfN+fU+i9F9f72AaiwJ3dpzqldshwJLFeVslzbExBhpBC47uq8slz3AUGeEyHwegdr/gtW5YyVLMtZrCTLVYXlWI4GlqsKy7EcDSxXFZZjORpYriplmZNg85xhMuzkOfXhtOiOyWDgjlz9LtbbBGZ3SmYgtm2+VYZ4vtg2aZVwMDDMMaz7UUjlat0xiq2+jvG18R3XYaYH9iMNH/Cl0cf9qx7AAvebH1oiaOWUzGjb3cuPWb1xhp/PEWTRVk8gnj00153p4hiriHwla1rz4xDLKc53qqdChj5Ojks5xwOMwh2xddXOSzkE0MspDlrqKtK3Rd4nid/Kx9Rea92K3Jrm8AWzvfsBQyxj+EN7dwbW5HJaPfx4FJjJ/WqlMkbwOELbqbuC/wyWcxWWcxWWcxWWcxWWcxWWcxWWcxWWcxWWcxWWcxWWc5MjvAOCT5I2axp/7gAAAABJRU5ErkJggg==" InformativeScreenshot="2c3a4f33cea5569f326ec340e8685347.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, Image" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Carregar Multiplos Arqu…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_29" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" ContentHash="2HBxLFpBTUWtryD4va1MIA" DesignTimeRectangle="801, 835, 293, 36" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ScanImagem' tag='IFRAME' /&gt;&lt;webctrl id='BtAbrirMultiplus' tag='BUTTON' /&gt;" Guid="5610f780-439c-4ee6-8901-bb9ce5e3646a" InformativeScreenshot="9ac79feb4eb87e81b5cc9c66af4e2af7.jpg" Reference="wDxsdArj_UCOxmuTMXwNCw/Ids6nfKzLU61hHyfAsjWvg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Arraste os arquivos ou …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_30" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" ContentHash="j8NdN5z2kECZNPJEOu4rrQ" DesignTimeRectangle="506, 371, 950, 66" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ScanImagem' tag='IFRAME' /&gt;&lt;webctrl id='ScanImagem' tag='IFRAME' /&gt;&lt;webctrl class='jFiler-input-dragDrop' tag='DIV' /&gt;" Guid="13a5e3fa-1806-46ea-92d3-d87e3144c255" InformativeScreenshot="6b2609f1df055f788ef413831703f5df.jpg" Reference="wDxsdArj_UCOxmuTMXwNCw/hlZc9L9kKUOB4-PT3a7sJA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Edit'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_22" InteractionMode="HardwareEvents" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Text="[If(Not String.IsNullOrEmpty(System.Linq.Enumerable.FirstOrDefault(System.IO.Directory.GetFiles(System.IO.Path.Combine(&quot;C:\Users\jackson.oliveira\Documents\UiPath\Junto_Garantia_Cadastro\Data\Apolices&quot;, DateTime.Now.ToString(&quot;yyyy-MM&quot;)), &quot;*&quot; &amp; in_NumeroApolice.Trim() &amp; &quot;.pdf&quot;))) AndAlso System.IO.File.Exists(System.Linq.Enumerable.FirstOrDefault(System.IO.Directory.GetFiles(System.IO.Path.Combine(&quot;C:\Users\jackson.oliveira\Documents\UiPath\Junto_Garantia_Cadastro\Data\Apolices&quot;, DateTime.Now.ToString(&quot;yyyy-MM&quot;)), &quot;*&quot; &amp; in_NumeroApolice.Trim() &amp; &quot;.pdf&quot;))), System.IO.Path.GetDirectoryName(System.Linq.Enumerable.FirstOrDefault(System.IO.Directory.GetFiles(System.IO.Path.Combine(&quot;C:\Users\jackson.oliveira\Documents\UiPath\Junto_Garantia_Cadastro\Data\Apolices&quot;, DateTime.Now.ToString(&quot;yyyy-MM&quot;)), &quot;*&quot; &amp; in_NumeroApolice.Trim() &amp; &quot;.pdf&quot;))) &amp; &quot;\&quot;&quot;&quot; &amp; System.IO.Path.GetFileNameWithoutExtension(System.Linq.Enumerable.FirstOrDefault(System.IO.Directory.GetFiles(System.IO.Path.Combine(&quot;C:\Users\jackson.oliveira\Documents\UiPath\Junto_Garantia_Cadastro\Data\Apolices&quot;, DateTime.Now.ToString(&quot;yyyy-MM&quot;)), &quot;*&quot; &amp; in_NumeroApolice.Trim() &amp; &quot;.pdf&quot;))) &amp; &quot;&quot;&quot;&quot;, String.Empty)]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" ContentHash="Z2aD66hCp0CKw3TMTke8zg" DesignTimeRectangle="183, 970, 1492, 15" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' /&gt;&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' /&gt;&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' /&gt;" Guid="7260bcc9-5ea7-4004-93bb-88af3d60452f" InformativeScreenshot="ca4f9644d9c1125f0c99673fb4be043f.jpg" Reference="wDxsdArj_UCOxmuTMXwNCw/c7jZykTeQUSZ2oX3pBBWGA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Abrir' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Abrir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_31" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" ContentHash="HJjbS1tdU0-W1M6K0_AY6Q" DesignTimeRectangle="1707, 994, 88, 26" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Abrir' /&gt;" Guid="2f712b68-0cb2-4483-ade1-5c078bf099cd" InformativeScreenshot="cff2c246e04ffad2756ffff6b8ed5605.jpg" Reference="wDxsdArj_UCOxmuTMXwNCw/50usFP-f9EaFcuvtAzUCFA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Abrir' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="652,57" sap2010:WorkflowViewState.IdRef="Delay_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Delay>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Voltar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_32" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="506, 672, 66, 33" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ScanImagem' tag='IFRAME' /&gt;&lt;webctrl id='ScanImagem' tag='IFRAME' /&gt;&lt;webctrl id='BtVoltar' tag='INPUT' /&gt;" Guid="5d155879-489c-421e-877e-dabb10760fa7" InformativeScreenshot="b8542acda2a8c1a7aea5737c0620bdbc.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Etiqueta'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_33" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CVScreenId="b97be82d-9319-4874-9ff5-8f046e3ec0dc" CvElementArea="1859, 206, 23, 22" CvType="CloseButton" DesignTimeRectangle="1864, 202, 13, 29" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='dialog_ScanImagem' tag='SPAN' type='' class='' aaname='×' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='×' /&gt;" Guid="336d712c-9140-4311-8a64-f762be49ecfb" InformativeScreenshot="bf022228946c281304dda8619e56a5ac.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="b97be82d-9319-4874-9ff5-8f046e3ec0dc" CvElementArea="1859, 206, 23, 22" CvType="CloseButton" DesignTimeRectangle="1848, 189, 45, 56" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Close' parentid='dialog_ScanImagem' tag='BUTTON' type='button' class='close' aaname='×' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='×' /&gt;" Guid="aeac79f2-b995-4a03-a5c6-52513775133a" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Voltar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_34" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3a6c58ff-d4e1-4592-b140-cf7d5d63012d" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="737, 1008, 109, 38" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='Button1' tag='BUTTON' /&gt;" Guid="5bd8ab49-76a1-4f7b-a4ee-14ce8f6d8645" InformativeScreenshot="ae58443a80db8d299cb8bc90f3e983e5.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <Assign sap:VirtualizedContainerService.HintSize="652,166" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+              </ActivityFunc>
+            </uix:NApplicationCard.OCREngine>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" ContentHash="rXzUobcPY0aASXm7a6--IA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAACu8AAArvAX12ikgAAAAHdElNRQfiBRkQCjcs3Wm5AAAJh0lEQVRYR9VXaVRU5xl+750ZlgFcADViRE1wqbFWU9OosUZNjWlUQAVRERGUQQZQFBE1Lqn7GhcWwQVBZBNRREFRJwHBBUXEiOC+BFFTxCiiaHLwzfPdGTTNac5pa3+03znP+e7cuXOf512/d+j/Y417l2iHu4CKto5sTZtH9KFkD3fK8PSjb3Q6qSBgjHRsSn/Kn+IofaPT0JFJRIe8TT9+kxU3iijJg2jn6KaU6O5KCW7xFO9WAQG1lODeQOnjWMrzZ83paQ3qk8FPIeS6fCIw3axkhpfdpfktKdeT2lxfYnrZv7uSQZw6RgPyYYCBUsbUU+JohhcY5AwRDHEsZfuw1bez2K5iPpudCWF10VS2LJ35U4srC8+0vbl0gtOdNdp3K1eTw61/VcicAcJiAokdCFbRrrGP4WpWAIshhHGP8YwRuNaemMZtby7jlpcXssW5ULYpm80tr3zJjreWP+9UtTYBQtp1vvsVWX8bbiL5rZU+jkAg4ABLd0FAg0KcNYFpP7DPiylzvFHIbtwXHoEgOd2TW5XP54531jBcz00vzlUEvH1jKXfCvRaXF+Y3KZvT1fpCODUr/8JE9s+WcHuyhy1emgb3M6XCUiEgE8Q5E5kO+jAd8K6HkDLc34XnYiEyhuLdky2O+Jd0rFxT1+7WcrY5P4tbXFrADtcXs1PlaiU8thXzjtlfXtABoSHKm2wi/OUSlid5qCjFYxmljW1QLBSWHwJprq/Y67HvA5ylw5OcaM94vbRn/G55l2cmbR0VLh/07fLO7ZWD3ru3fodd2Re1TYpnsj2IO9xawbbl8xSvaEvDkqgwwFp1MshE2rgyPAlWCgyhveMf4uUgBOnRyUbk+VfR1346yvbWygV6K7PikFhNgf4nCSJVGV4sJ3q8VKV5Zso5vi2Hc6YGAkZpDQGXtflB3O7aUraDAMtzM1lVqH8B8X6U6k7WZXNM5GJljifa42kNAdmKq0EqHdezdCKQUd9VqPVhHZnJrDCIVIWBAeoC/Y+a40FsfiyQ5TSIAKR4VEbK2KV0VS+RdztSJ4/trdrjVd6qdC63ubKIzU9OZSnHh+WjfqWq01PbyIV6E3kK4p7rKzAEqKPDk5iOTWE8xGZnp9erz4RMcny0nsyLp5PF2Rl2cF+RKj+A1QZ/VudMUiAlIV9EacaOuIHydAJIytcRPPS5TcHUGsdLi9gyPxAVg75h8GtAv/CXioKNzQ3uJeJIIoNfJOXpGDFiuShYkLN5SWg6alprUTqTNPl6IGAgvFCnFgIOCnJfltJQEegHSl+IdmmgCGcvgEAmQiqrDbp1LUtms6UhQKkYhEAkdDYqyQIJDQEGP2CyLeX7n5UK9SyfCmZYzebnQp9qz8/6HIBIHVkWhZC2eMZ0M7jdLFenWE4oP9oJ8i0jmTa5MoiZNjqvVwRsBPYhr/Z69mxeEPK9eQ5yKRme2ofETh9XBTGdlMRX3H/IpzviXC0dD2T16WmsPR+G7hZ+Drs9QLYXUbuHfcnqbGik+XF4J9eP5Uy8SFjeSB4JciEgwjkL0CgiREPbMsyiReGMHM0+VJN4XjSyRPcXCNlQtHYIOOQj8CkS7zm8wDJEINZsc2F2Sqvri2TROETyqU8FyxbHg1Mt8vSsOQDXix6xFeTRLkbyRkQ4FwJWioBUWBg1nJrkBa+QU/C8SNTtbsZ2njR6ChoZkaogQMBNPq5vkE4GKZkvckB9Zto6JCJpzoSQ5pie0OfVSLws1X5kMrKeto1iijKRi73xOsK5GGiqCBArxpWkOLcQRazIE7HH4bdxo8Ihhqjn/QgBt+53NzR0qVzL7W8u57eu/A1NZME6dDDqXLmGmhaFUrPScHWTEyFZ1kf1bJHly3IyLIrFC19Z/xsCUBEI0TQlTMJb4jcxuI5xDcc9om73NxC616cfPdr2fGBdAg8CBj5J4I9r41MG1e2Q8ZlaXpxPLb5bIjtcXJD61ulwts8LYZuvg1h7YDJbpqIRxcKqV0IQgkiEIBICBARJtMty5TvhJSHE6LEpABEOD2peMa97t3sbqvs93sb9a7fzgCfxQkQpBNkD9HHtdvqwJpbwXUTvmljucnMVd762grveWMWOp+eydYYPS68T8QBgTEJBsMnFHPez8fl1mKJcXkDUUIAIZzlpSqbbtr666GyvB5sgII4/eZrIf3ma+AwYOvjpToIYBRAWLAT2qo7mrjdXQ8Bq7lixhJsdCWRVPE5GYxVsVixvFBDl0gPX95XvXnupCvc7IWxEzU3HY5eqryKFgD4/bFG8YBKRMfjZTi1AuBboi7A86vdoG/+hagM7lS/m1sWz2Xwv2reIrbEPhCk9IBaxj3eTYeXaV8RGgeJaeMQCO9FiLqcPamIEhnz4cHPdnx/HKSH4pG6HEFCP3df5x3QCMQ1+lmTd73Fc7vvwgEhW25JwNjuC7inq25hY9RQz4jOFHNlP20Z+hphX/4OASOcGwF8hFxALxALWQHbfR1uVMAgRA5CM2G/DIwOFF3pWRxHIh/3+/saH7XHuNykOZRXaMWXg9BTH997xV2i/d1tci3nyA9oyogw5YMz+xlKNcikFcZtX5GL1ehBDHz3aSnD/ECTiQ+EFBRAidoi61PuHzYPa3lpBCI0KQ0YQxq8abclMxqlmPLrFmJbgvgkWm6P0XFHvFYpXRHI2lmA0ki/KZbKSfL8UIBaIRJKpIGQZSrJBVAR2JSdAzn96GFv5/oNo3x7VURbtK1fKGLkGaU5N3YUpqRIheAGLnwAL0KDi0GBqXzWeWCU0jSJ2QoAVYGL91QKZgC2QJoj7msh71cQwiPl3d9c9bX1t0XYMnt1odR+JioI0mJ6cQPhXtN0JaK3+6POzgVkQEKZg84gw5EQYREwDsaNifdSvrG9cf6yJJliKfIh1QEXs6vH3qIbu30dw13vrucN3K8VwyZYloSwbdLdx1C6l3eO6UvJoFaWJU+2/tN65+iWBUHRIO8R6FSbbx/YYMK1Kw1gt4i3O82xvkXAvMSnfwai2HfdGYqp6m9JGq+kIBs7grqa3vcES06vDjSUa6wuzh6lPBhlAUk8HUe9iZBNTshjRxbBq8BPT8gvpoM9V9VFdhpnBf76U4zsc4WiuTNni39V/vPbguNw/EfBqiiPbFYjHpFwBy2vhhQZ8VgRJORNfYvKp1+QF3FYZdBlSlvcYNCEbZR54IwGNqxWQjfHpwAQVxqjWENAHcMe1H0KhU+dOHoOJqT+G1bZS9kQN/h8STXnP+Nv/7UX0M6vImAy6YDL1AAAAAElFTkSuQmCC" InformativeScreenshot="b2664d900c46e755999f8f7dd5b1de4a.jpg" Reference="t-2VCXfgGUWTPpvWKjOBMg/JA11VpWbnkWroAD2EXQC2Q" Selector="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" Url="https://jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" Version="V3" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+          <Assign sap:VirtualizedContainerService.HintSize="688,48" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Capturar" sap:VirtualizedContainerService.HintSize="722,165" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="688,57" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="688,48" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_ErrorMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
+                </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Por fim" sap:VirtualizedContainerService.HintSize="722,25" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

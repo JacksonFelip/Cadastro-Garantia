@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Incluir",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "13EHhlxcHkeV1-7X2EdX4Q",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/13EHhlxcHkeV1-7X2EdX4Q",
+  "ParentRef": "t-2VCXfgGUWTPpvWKjOBMg/vA-rNSrcmE6O7VjaJAZfUw",
+  "Created": "2026-10-07T14:18:13.2302276Z",
+  "Updated": "2026-10-07T14:18:13.2302276Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

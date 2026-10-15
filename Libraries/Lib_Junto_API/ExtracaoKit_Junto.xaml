@@ -1,0 +1,197 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtracaoKit_Junto" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="erros" Type="OutArgument(scg:List(x:String))" />
+    <x:Property Name="sucesso" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="dadosKit" Type="OutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="textoPdf" Type="OutArgument(x:String)" />
+    <x:Property Name="listaPdfs" Type="InArgument(scg:List(x:String))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ExtracaoKit_Junto_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ExtracaoKit_Junto" sap:VirtualizedContainerService.HintSize="1138,1306" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Double" Name="valorNumero" />
+      <Variable x:TypeArguments="x:String" Name="valorBruto" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[dadosKit]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[New Dictionary(Of String, Object)()]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">[erros]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)()]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[textoPdf]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[""]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,994" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Tentar" sap:VirtualizedContainerService.HintSize="450,753" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ReadPDFText PreserveFormatting="{x:Null}" ResourceFile="{x:Null}" DisplayName="Read PDF Text" FileName="[listaPdfs(0)]" sap:VirtualizedContainerService.HintSize="416,124" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[textoPdf]">
+            <ui:ReadPDFText.Item>
+              <upap:ItemArgument x:TypeArguments="upr:IResource" ResourceFile="{x:Null}" FileName="[listaPdfs(0)]" />
+            </ui:ReadPDFText.Item>
+          </ui:ReadPDFText>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="' ---------- 1) Numero da apolice ----------&#xA;Dim m = System.Text.RegularExpressions.Regex.Match(texto, &quot;N\s*[º°]\s*Ap[óo]lice\s*Seguro\s*Garantia\s*([\d\-]+)&quot;)&#xA;If m.Success Then dados(&quot;NumeroApolice&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 2) Controle interno ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Controle\s*Interno\s*\(C[óo]digo\s*Controle\)\s*(\d+)&quot;)&#xA;If m.Success Then dados(&quot;ControleInterno&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 3) Data de emissao ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Data\s*de\s*emiss[ãa]o\s*(\d{2}/\d{2}/\d{4})&quot;)&#xA;If m.Success Then dados(&quot;DataEmissao&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 4) Vigencias (mesma linha) ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;In[íi]cio\s*T[ée]rmino\s*[\r\n\s]+(\d{2}/\d{2}/\d{4})\s*(\d{2}/\d{2}/\d{4})&quot;)&#xA;If m.Success Then&#xA;    dados(&quot;InicioVigencia&quot;) = m.Groups(1).Value.Trim()&#xA;    dados(&quot;TerminoVigencia&quot;) = m.Groups(2).Value.Trim()&#xA;End If&#xA;&#xA;' ---------- 5) Limite Maximo Garantido (IS) ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Limite\s*M[áa]ximo\s*Garantido\s*\(L\.?\s*M\.?\s*G\)\s*R\$\s*([\d.,]+)&quot;)&#xA;If m.Success Then dados(&quot;LimiteMaximoGarantido&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 6) Premio liquido / IOF / Total ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Pr[êe]mio\s*L[íi]quido[^\r\n]*R\$\s*([\d.,]+)&quot;)&#xA;If m.Success Then dados(&quot;PremioLiquido&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;I\.?\s*O\.?\s*F\s*R\$\s*([\d.,]+)&quot;)&#xA;If m.Success Then dados(&quot;IOF&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Pr[êe]mio\s*Total\s*R\$\s*([\d.,]+)&quot;)&#xA;If m.Success Then dados(&quot;PremioTotal&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 7) Edital ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;(?&lt;=Edital\s+DE\s+)PRE\s*G[ÃA]O\s+ELETR[ÔO]NICO\s+SRP\s+N[º°]\s*[\d/]+-?[A-Z]*&quot;)&#xA;If m.Success Then dados(&quot;Edital&quot;) = m.Value.Trim()&#xA;&#xA;' ---------- 8) Processo administrativo ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;PROCESSO\s+ADMINISTRATIVO\s*N[º°]?\s*([\d/]+)&quot;)&#xA;If m.Success Then dados(&quot;Processo&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 9) Segurado (CNPJ + nome) ----------&#xA;' O CNPJ do segurado vem SEMPRE depois de &quot;CPF ou CNPJ&quot;&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;CPF\s*ou\s*CNPJ\s*n\s*[ªº]?\s*:?\s*([\d./\-]{14,20})&quot;)&#xA;If m.Success Then dados(&quot;CnpjSegurado&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' O nome do segurado e a linha imediatamente ACIMA do &quot;CPF ou CNPJ&quot;&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;([^\r\n]{5,120})\r?\n\s*CPF\s*ou\s*CNPJ&quot;)&#xA;If m.Success Then dados(&quot;NomeSegurado&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 10) Tomador (CNPJ + nome) ----------&#xA;' O bloco do Tomador vem depois da palavra &quot;Tomador&quot; e tem seu próprio &quot;CPF ou CNPJ&quot;&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Tomador[\s\S]{0,600}?CPF\s*ou\s*CNPJ\s*n\s*[ªº]?\s*:?\s*([\d./\-]{14,20})&quot;)&#xA;If m.Success Then dados(&quot;CnpjTomador&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Tomador\s*\r?\n\s*([^\r\n]{5,120})&quot;)&#xA;If m.Success Then dados(&quot;NomeTomador&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 11) Modalidade / Ramo ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Modalidade\s+([A-ZÀ-Ú][^\r\n]{2,60})&quot;)&#xA;If m.Success Then dados(&quot;Modalidade&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Ramo\s*(\d{4})\s*-\s*([^\r\n]{3,60})&quot;)&#xA;If m.Success Then&#xA;    dados(&quot;RamoCodigo&quot;) = m.Groups(1).Value.Trim()&#xA;    dados(&quot;RamoDescricao&quot;) = m.Groups(2).Value.Trim()&#xA;End If&#xA;&#xA;' ---------- 12) Seguradora ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;(JUNTO\s+SEGUROS\s*S\.?/?A?\.?)&quot;)&#xA;If m.Success Then dados(&quot;Seguradora&quot;) = m.Groups(1).Value.Trim()&#xA;&#xA;' ---------- 13) Parcela: numero, vencimento e valor ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;\n\s*(\d{1,2})\s+(\d{2}/\d{2}/\d{4})\s+(\d+)\s+R\$\s*([\d.,]+)&quot;)&#xA;If m.Success Then&#xA;    dados(&quot;ParcelaNumero&quot;) = m.Groups(1).Value.Trim()&#xA;    dados(&quot;ParcelaVencimento&quot;) = m.Groups(2).Value.Trim()&#xA;    dados(&quot;ParcelaValor&quot;) = m.Groups(4).Value.Trim()&#xA;End If&#xA;&#xA;' ---------- 14) Normalizar o Edital (tirar quebras e espacos duplos) ----------&#xA;If dados.ContainsKey(&quot;Edital&quot;) Then&#xA;    dados(&quot;Edital&quot;) = System.Text.RegularExpressions.Regex.Replace(dados(&quot;Edital&quot;).ToString, &quot;\s+&quot;, &quot; &quot;).Trim()&#xA;End If&#xA;&#xA;' ---------- 16) Objeto da Garantia (1o paragrafo) ----------&#xA;m = System.Text.RegularExpressions.Regex.Match(texto, &quot;Objeto\s+da\s+Garantia\s+([\s\S]*?)(?=\r?\n[ \t]*\r?\n)&quot;)&#xA;If m.Success Then&#xA;    dados(&quot;ObjetoGarantia&quot;) = System.Text.RegularExpressions.Regex.Replace(m.Groups(1).Value, &quot;\s+&quot;, &quot; &quot;).Replace(&quot;;&quot;, &quot;,&quot;).Trim()&#xA;End If&#xA;' ---------- Diagnostico ----------&#xA;rx = &quot;Campos encontrados: &quot; &amp; dados.Count.ToString" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,403" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="texto">[textoPdf]</InArgument>
+              <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="dados">[dadosKit]</InOutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="rx">[valorBruto]</OutArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[sucesso]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[dadosKit.Count &gt; 0]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Capturar" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Por fim" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

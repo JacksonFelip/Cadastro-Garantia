@@ -1,0 +1,212 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="NavegarParaInclusao" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="NavegarParaInclusao_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="NavegarParaInclusao" sap:VirtualizedContainerService.HintSize="1159,2049" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome Corretor On Line" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,2026" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="5d57305a-bd32-49b4-b934-b6ce87598ef9" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="686,1831" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Incluir'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,1771" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="5d57305a-bd32-49b4-b934-b6ce87598ef9" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Destino aparece" sap:VirtualizedContainerService.HintSize="650,245" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Incluir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,185" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d57305a-bd32-49b4-b934-b6ce87598ef9" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1815, 268, 90, 33" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtIncluir' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='BtIncluir' tag='BUTTON' type='button' class='btn btn-sm float-right btn-success btn-raised' aaname='   Incluir' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='INCLUIR' /&gt;" Guid="85efd80e-1042-4864-ab0b-a4a5f408f81c" InformativeScreenshot="c4c25b6c7536e841528a94cb0aef79f7.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Destino não aparece" sap:VirtualizedContainerService.HintSize="650,1190" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'I'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d57305a-bd32-49b4-b934-b6ce87598ef9" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CVScreenId="3ef142e8-71c1-4bc2-a6e8-30e16375b9f5" CvElementArea="52, 153, 32, 27" CvType="Icon" DesignTimeRectangle="56, 154, 25, 25" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" Guid="89883c15-d1f1-487d-9d12-da973dae2b63" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB4SURBVEhLY/hPBzBqCUkAasnP/+9fv/v/nKr48//vEMNhlhz5H63n/p+Jqrjj/zaI4TBLTv0v8Yj4L0VVPOX/Pojhwy/iaQvoaQldUhddLKFLZqQtGHaW0KVYoUvqevf/3M59/9dRFV/7/xxi+PCLeNqC4WLJ//8A6QRsqpma93gAAAAASUVORK5CYII=" InformativeScreenshot="7fe3710acdac99406259c75c0abb1f9b.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="3ef142e8-71c1-4bc2-a6e8-30e16375b9f5" CvElementArea="19, 220, 47, 46" CvType="Icon" DesignTimeRectangle="31, 230, 24, 25" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl tag='I' /&gt;" Guid="7a5c9817-7e67-4b2e-81d5-ab73c20dd95e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFsSURBVEhL7dU/a8JAGAZwP02LVGIJkSpJ9MSa5jBy7kIRXLq4id06VsTV0Q4OjqEf8ekluYsX88doFTp0eBbvvecHL8GreN8j3DJ/CPAZntcuyNoD9TPOc1IO8D2YrIU7vRnF68MpiZwG/CHaYzMqti3U7Ai5Z+WQYoCvhUxkOQHZ89/2LgyBVMfuyXUVAAxdpby9U852LnSJTIqRHEApb9gwtxkz2z7qDYlQ0ONzkQyAl09FuWFll8twRDOKkSOAoTezypXLKEjtLY0oAIMzF+W6hacNSwwWhW560MJ7TWizQQKJAWchy4MQdJWh06Ew4rscWXjxWQgky38JiHVJpOJ8dFAND00YqxcxeClAYK+I6Guh/u5xINw7L18GOz8MXgoE9+gyQrQ5B4IB+jXMHEyWFCV9T3YefabXA2T+AZGzAROP0y4apdPBQzmA//+/Ki/XueHvwyDRlwJ45Nv7eWZy3uo0cOXcGBjhBy7DAcQlkT/cAAAAAElFTkSuQmCC" SearchSteps="Selector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset X="2" Y="1" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="616,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Operacional'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d57305a-bd32-49b4-b934-b6ce87598ef9" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="8, 379, 241, 50" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Operacional' parentid='navSide' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Operacional' parentid='navSide' tag='A' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Operacional' /&gt;" Guid="62f38a5c-f1ab-4aaf-8787-04fa59eabe5a" InformativeScreenshot="6e31061a0488f69fe04156fe549b208a.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="616,434" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3">
+                    <ui:RetryScope.ActivityBody>
+                      <ActivityAction>
+                        <Sequence DisplayName="Ação" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Propostas/Apólices'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d57305a-bd32-49b4-b934-b6ce87598ef9" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CVScreenId="ae3e4ff2-9b19-438f-98ef-75d12fa905fa" CvTextArea="671, 435, 123, 17" CvTextArgument="Propostas/Apólices" CvType="Text" DesignTimeRectangle="673, 435, 120, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aaname='  Propostas/Apólices ' parentid='card-conteudo-dados-OPERACIONAL_PRINCIPAL' tag='A' /&gt;" Guid="938b2021-3002-48b6-82c9-03101624f6fd" InformativeScreenshot="296cf113c3e5a458cbf643f4ee2b5ec5.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:RetryScope.ActivityBody>
+                    <ui:RetryScope.Condition>
+                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                    </ui:RetryScope.Condition>
+                  </ui:RetryScope>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Incluir'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,185" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5d57305a-bd32-49b4-b934-b6ce87598ef9" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="1815, 268, 90, 33" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtIncluir' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='BtIncluir' tag='BUTTON' type='button' class='btn btn-sm float-right btn-success btn-raised' aaname='   Incluir' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='INCLUIR' /&gt;" Guid="3fb4af01-c4d4-4e89-ad6a-4c6f6dad7a3a" InformativeScreenshot="c4c25b6c7536e841528a94cb0aef79f7.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CVScreenId="9c71db62-0b74-4a8c-86f8-886014a7de33" ContentHash="G1NsUIG1JE-W5S4tIVqXTg" CvElementArea="1813, 265, 94, 39" CvTextArea="1842, 276, 57, 15" CvTextArgument="INCLUIR" CvType="Button" DesignTimeRectangle="1815, 268, 90, 33" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='BtIncluir' tag='BUTTON' /&gt;" Guid="6fa763b5-d5ad-4c45-b2d9-6cb7338e5942" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFoAAAAhCAYAAABZTbwAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJvSURBVGhD7ZjPSxtBFMfz54XiQSk9+Cd48FwQeix4EXoPFRFb6amH3lqpYP1RpYoWY3posaRW05I2Vo1KQnz6nfLiZDK7O8lshsC+Jx/YnXnv7cxnd2NI7sHzhzTyelQYIHCcs00I6SOiAyGiAyGiAyGiA+Ek+tGbcdr+tUOtmxZFRaPVoEq9QnP789YeWcdJ9NTqE6peVenH2RG9Ly93sft7j84b53TRqKubsfZzXd0cW6+s0pNoCLXNL355RV9r32hiaZL2q0X1dGPMlptVUhWN46cfp+n0+rR9LvwnFdELpZdK7uG/Q0W9WVf5qLPlZ5FURJsgL0403oBmq0nls7I6Rz6Cz8HMp2d02bzs6sO1erz9/q49jx6Yj/ross2b60E/BO8X47bo5WEaKtG6AJtoU4Bey2ODEm3W2NYSh5do/PN7vDLVMQaQ149oBNeZovmca6KwSUma70d01BsXhZdoXHjzZKtjDPiIRmCj5kZcnyARrWFujEUf/CmpcdQWPs92bIRzIMHspxNKtOuNZ/oS/aK0qL5dHF+c0N+rmjpeP95o5yOvH9FYPB/j6+EwibYFz7swVE80NsivJAf3cX2CBiWaa/T1Jd10HS/R88UFWjn60DEGfETr5wjuwxvkmihsInXQ20e0Po/1YF3cJw4v0VEgz0c0Xw+h9zEF6LU8liTavDYwr58kmscQep84hlI04M2afbhWD72OBZih90nq4SK614+QnkRH/Xpngrw40VnESTR+8ixWD+jm7s8lkId8+an0HifRgj8iOhAiOhAiOhAiOhAiOhAiOhAiOhAiOhC5fGHMOiGkR74wRrd3QQ9gyOKMnQAAAABJRU5ErkJggg==" InformativeScreenshot="4779d8913219d9ec78dfc844711e0d09.jpg" Reference="t-2VCXfgGUWTPpvWKjOBMg/13EHhlxcHkeV1-7X2EdX4Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, Image, CV" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" ContentHash="EnmN7oPElkCrIAREJWdKDA" IconBase64="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" InformativeScreenshot="fb5724bbae72245770d87449020d69f2.jpg" Reference="t-2VCXfgGUWTPpvWKjOBMg/vA-rNSrcmE6O7VjaJAZfUw" Selector="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" Url="https://jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" Version="V3" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
