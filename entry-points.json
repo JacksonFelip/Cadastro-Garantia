@@ -16,9 +16,56 @@
           },
           "in_BaseUrl": {
             "type": "string"
+          },
+          "in_Token": {
+            "type": "string"
+          },
+          "in_DataInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "in_DataFim": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "out_ListaApolices": {
+            "type": "array",
+            "items": {}
+          },
+          "out_DocumentUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "out_TotalEncontrado": {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647
+          },
+          "out_DiasConsultados": {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647
+          },
+          "out_Success": {
+            "type": "boolean"
+          },
+          "out_ErrorMessage": {
+            "type": "string"
+          },
+          "out_QtdEndossos": {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647
+          }
+        }
       }
     }
   ]

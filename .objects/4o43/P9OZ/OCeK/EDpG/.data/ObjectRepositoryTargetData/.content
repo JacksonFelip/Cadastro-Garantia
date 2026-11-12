@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="lV0cCN8EbUahnT7tpprQWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="jgs.corretor-online.com.br/default.aspx" DesignTimeRectangle="942, 679, 52, 36" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='OK' tag='BUTTON' type='button' /&gt;" Guid="61808963-4285-4e6a-94c1-696448953e43" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Quiver - Sistema para Corretora de Seguros | Software corretora de seguros | Sistemas de Seguros' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b9e622dda6ca79d9a82ffa3b735d86d9.jpg" xmlns="">0pqxtwP9bmkuxsahgijtggw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

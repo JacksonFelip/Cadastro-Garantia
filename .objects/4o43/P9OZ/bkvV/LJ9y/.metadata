@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Nº Apólice",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "LJ9yBHRvAEG166QK6hcMhA",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/LJ9yBHRvAEG166QK6hcMhA",
+  "ParentRef": "t-2VCXfgGUWTPpvWKjOBMg/bkvVbQYxpEyiNWLnh1SxxA",
+  "Created": "2026-10-29T12:55:53.4688118Z",
+  "Updated": "2026-10-29T12:55:53.4688118Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

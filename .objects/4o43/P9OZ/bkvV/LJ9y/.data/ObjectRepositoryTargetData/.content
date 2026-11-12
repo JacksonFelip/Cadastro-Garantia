@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="eqwTG7jKhUiSmOl_zpT_nw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="508, 339, 526, 32" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='NoApolice' tag='INPUT' type='text' class='form-control  ' aaname='Nº Apólice' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="e336efe9-eeb5-4f72-a81b-7c9e618e0962" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="08db5295-573e-432a-82f4-f7d7a8a36815" CvTextArea="507, 321, 57, 15" CvTextArgument="N° Apólice" CvType="Text" DesignTimeRectangle="508, 323, 55, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='labelNoApolice' tag='LABEL' type='' class='bmd-label-floating' aaname='Nº Apólice' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Nº Apólice' /&gt;" Guid="8fa93f81-1a13-4262-a6ea-9d98e995d4e2" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="d27a1181508b8e19faef230c2f7acc64.jpg" xmlns="">0pmGZATV2PUOtWrYfZxzGxg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

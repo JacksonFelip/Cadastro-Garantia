@@ -118,7 +118,7 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetPolicies" sap:VirtualizedContainerService.HintSize="1147,1958" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetPolicies" sap:VirtualizedContainerService.HintSize="1332,1990" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="queryParams" />
       <Variable x:TypeArguments="x:String" Name="response" />
@@ -146,10 +146,14 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="True" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[New System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Authorization&quot;, &quot;Bearer &quot; + in_Token }, { &quot;Content-Type&quot;, &quot;application/json&quot; } }]" sap:VirtualizedContainerService.HintSize="416,268" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" OAuthToken="[in_Token]" Parameters="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;PageNumber&quot;, in_PageNumber },{ &quot;PageSize&quot;, in_PageSize },{ &quot;DateStart&quot;, in_DateStart },{ &quot;DateEnd&quot;, in_DateEnd } }]" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[in_BaseUrl + &quot;/api/v3/policies&quot;]" Result="[httpResponse]" RetryCount="3" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+          <uwah:NetHttpRequest AuthenticationType="None" BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" ContinueOnError="False" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" DisableSslVerification="True" DisplayName="HTTP Request" EnableCookies="True" FileOverwrite="AutoRename" FilePath="{x:Null}" FollowRedirects="True" FormData="{x:Null}" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[New System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Authorization&quot;, &quot;Bearer &quot; + in_Token }, { &quot;Content-Type&quot;, &quot;application/json&quot; } }]" sap:VirtualizedContainerService.HintSize="416,268" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" LocalFiles="{x:Null}" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" OAuthToken="[in_Token]" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;PageNumber&quot;, in_PageNumber },{ &quot;PageSize&quot;, in_PageSize },{ &quot;DateStart&quot;, in_DateStart },{ &quot;DateEnd&quot;, in_DateEnd } }]" PathResource="{x:Null}" PreferRetryAfterValue="True" ProxyConfiguration="{x:Null}" ProxySetting="Custom" RequestBodyType="None" RequestUrl="[in_BaseUrl + &quot;/api/v3/policies&quot;]" ResourceFiles="{x:Null}" Result="[httpResponse]" RetryCount="3" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="{x:Null}" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
             <uwah:NetHttpRequest.TimeoutInMiliseconds>
               <InArgument x:TypeArguments="s:Nullable(x:Int32)">
-                <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="60000" />
+                <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="60000">
+                  <Literal.Result>
+                    <OutArgument x:TypeArguments="s:Nullable(x:Int32)" />
+                  </Literal.Result>
+                </Literal>
               </InArgument>
             </uwah:NetHttpRequest.TimeoutInMiliseconds>
           </uwah:NetHttpRequest>
@@ -210,7 +214,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[statusCode = 200]" sap:VirtualizedContainerService.HintSize="452,867" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[statusCode = 200]" sap:VirtualizedContainerService.HintSize="452,899" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,222" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>

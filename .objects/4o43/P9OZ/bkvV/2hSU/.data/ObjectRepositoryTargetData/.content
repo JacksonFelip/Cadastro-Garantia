@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="wQ-qIiBP2Ui4TSxZwv-VtA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CvType="Icon" DesignTimeRectangle="37, 842, 16, 16" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='GridConsulta' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SPAN' /&gt;" Guid="8abe348d-8672-402e-8e51-df07436f3e1b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE+SURBVDhPjZOha8NAFIefqIiMjB3UTB7MFKYCNYWKDSYWiBhH1Zgok7WTlaNihIlB5mIGmZvtPzBIxaC28sRERMRv77Jka653W35wIhe+7929vBD6ptohmwl4RCDyIOY5VAX0E1QFkrEPGoxw+5QhW0kcsci/WYPkMIScSfe6GiHQVf0Q0ZmAfFG1Uz1OQN41KIrzesOatjLDyUZvKOR8DS0pn1lA8g/BAdxGIYsDeIPmClaBE+ZsEoQ+w+MEhW7igaAHTBQhY1jHEGx7Vb67jNBSXcHHEscUQJz+druOcew8dgh2D2H9adZ73TZhHYegRDrl+/08K6QXTbf3YB274DPFOQ+MmN9jMRXwGSQ9bQasYxe88lDUc87QyQSL1RsKVX6/M2IXVArF+xYOphNnE/umI/j3Z7KscCgbAfAF8dsWJSsigBYAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="80, 843, 15, 15" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl id='GridConsulta' tag='TABLE' /&gt;&lt;webctrl parentid='241490,0,4' tableRow='2' tag='SPAN' /&gt;" Guid="09c00294-cfae-4219-976f-475b4739b51d" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="46d941b1ea5acd5a11eeac9eadcd255e.jpg" xmlns="">06EZOurMhbUOzYXnMc9J6Fw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

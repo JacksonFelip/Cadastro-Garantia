@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="eq0cgk1QXUSwGRPj9qpsUQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" DesignTimeRectangle="23, 224, 40, 40" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl parentid='home' tag='DIV' /&gt;" Guid="bff0c5a5-d769-40f5-83f1-7b79d39a1590" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="978be5e274450b69453ef2977359c15a.jpg" xmlns="">0UMcMGeBQeUCb5UNYaC53hA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

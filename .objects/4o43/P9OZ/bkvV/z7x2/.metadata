@@ -1,0 +1,14 @@
+﻿{
+  "Name": "PropostasApólices",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "z7x26pPfc0SbQ95Bk1Eh5w",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/z7x26pPfc0SbQ95Bk1Eh5w",
+  "ParentRef": "t-2VCXfgGUWTPpvWKjOBMg/bkvVbQYxpEyiNWLnh1SxxA",
+  "Created": "2026-10-29T14:04:27.117295Z",
+  "Updated": "2026-10-29T14:04:27.117295Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

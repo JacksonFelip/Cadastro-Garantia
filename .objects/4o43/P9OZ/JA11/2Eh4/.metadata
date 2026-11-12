@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Sim",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "2Eh4Sblsw0eMB6kbrvBuvQ",
+  "Reference": "t-2VCXfgGUWTPpvWKjOBMg/2Eh4Sblsw0eMB6kbrvBuvQ",
+  "ParentRef": "t-2VCXfgGUWTPpvWKjOBMg/JA11VpWbnkWroAD2EXQC2Q",
+  "Created": "2026-11-05T17:44:49.3232227Z",
+  "Updated": "2026-11-05T17:44:49.3232227Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

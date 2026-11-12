@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ZOK2GmtApEuMbptdLyFbaA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="jgs.corretor-online.com.br/fastBoot/menuFast.Aspx" CVScreenId="fa2e6c11-80f6-411c-ba0d-bacf478f1d6a" CvTextArea="671, 435, 123, 17" CvTextArgument="Propostas/Apólices" CvType="Text" DesignTimeRectangle="673, 435, 120, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='ZonaInterna' tag='IFRAME' /&gt;&lt;webctrl aaname='  Propostas/Apólices ' parentid='card-conteudo-dados-OPERACIONAL_PRINCIPAL' tag='A' /&gt;" Guid="416f1ad5-00a4-45d1-8e5e-11fdfe38f5df" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Corretor On Line' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="205278146ae5bdc910ffd09bb46aa5e3.jpg" xmlns="">0ItqkerH16UyiLXcqN0FeSQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
